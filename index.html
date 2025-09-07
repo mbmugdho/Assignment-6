@@ -22,7 +22,9 @@
   </head>
   <body>
     <header class="bg-[#15803D] flex justify-evenly">
-      <nav class="navbar text-white  w-11/12 mx-auto flex flex-col md:flex-row md:justify-between md:items-center gap-3 py-3">
+      <nav
+        class="navbar text-white w-11/12 mx-auto flex flex-col md:flex-row md:justify-between md:items-center gap-3 py-3"
+      >
         <div class="flex justify-center md:justify-start">
           <a class="text-2xl">Green Earth</a>
         </div>
@@ -35,12 +37,45 @@
         </div>
 
         <div class="flex justify-center md:justify-end">
-          <button class="bg-[#FACC15] rounded-full border-none text-[#15803D] font-normal py-1 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg hover:bg-white ">
+          <button
+            class="bg-[#FACC15] rounded-full border-none text-[#15803D] font-normal py-1 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg hover:bg-white"
+          >
             Plant a Tree
           </button>
         </div>
       </nav>
     </header>
+    <section class="hero-section bg-[#CFF0DC] w-full h-100vh">
+      <div
+        class="w-11/12 mx-auto flex flex-col items-center text-center md:flex-row md:justify-between md:items-center md:text-center"
+      >
+        <img src="./assets/hero-leaf1.png" alt="" class="hidden xl:block" />
+
+        <div class="flex flex-col items-center xl:items-center gap-5">
+          <img
+            src="./assets/green_earth-removebg-preview.png"
+            alt=""
+            class="block xl:hidden w-48"
+          />
+          <div class="py-5">
+            <h1 class="text-2xl sm:text-3xl lg:text-3xl font-bold">
+              Plant a Tree, Grow a Future
+            </h1>
+            <p class="text-sm sm:text-base lg:text-lg">
+              Join our mission to plant 1 million trees and make the Earth
+              greener for future generations.
+            </p>
+            <button
+              class="bg-[#FACC15] rounded-full border-none text-[#15803D] font-normal py-2 px-4 btn btn-md hover:bg-white"
+            >
+              Get Involved
+            </button>
+          </div>
+        </div>
+
+        <img src="./assets/hero-leaf2.png" alt="" class="hidden xl:block" />
+      </div>
+    </section>
     <script src="./index.js"></script>
   </body>
 </html>
