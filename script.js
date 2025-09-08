@@ -218,9 +218,9 @@ function renderCart() {
       'flex',
       'justify-between',
       'items-center',
-      'bg-gray-100',
-      'p-2',
-      'rounded'
+      'bg-[#F0FDF4]',
+      'p-5',
+      'rounded-lg'
     )
 
     li.innerHTML = `
