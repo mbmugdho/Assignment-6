@@ -6,12 +6,12 @@ function loadCategories() {
 
 function displayCategories(categories) {
   const container = document.getElementById('category-container')
-  container.innerHTML = ''
+  container.innerHTML = '<div class="text-center lg:text-left text-xl font-bold ml-3 mb-4">Categories</div>'
 
   const allBtn = document.createElement('div')
   allBtn.innerHTML = `
      <button onclick="loadAllPlants(false)" 
-      class="w-full text-left font-normal px-4 py-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition">
+      class="w-full text-center lg:text-left font-normal px-4 py-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition">
        All Trees
     </button>
   `
@@ -21,7 +21,7 @@ function displayCategories(categories) {
     const div = document.createElement('div')
     div.innerHTML = `
       <button onclick="loadPlantsByCategory(${category.id})"
-        class="w-full text-left font-normal px-4 py-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition">
+        class="w-full text-center lg:text-left font-normal px-4 py-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition">
          ${category.category_name}
       </button>
     `
@@ -123,6 +123,8 @@ function loadPlantDetail(id) {
 function addToCart(id, name, price) {
   alert(`✅ Added "${name}" to cart (৳${price})`)
 }
+
+
 
 loadCategories()
 loadAllPlants(true)
