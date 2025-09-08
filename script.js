@@ -10,9 +10,9 @@ function displayCategories(categories) {
 
   const allBtn = document.createElement('div')
   allBtn.innerHTML = `
-    <button onclick="loadAllPlants(false)" 
-      class="w-full text-left font-normal px-4 py-2 rounded-lg bg-white border border-green-500 text-green-700 hover:bg-[#15803D] hover:text-white transition">
-      🌍 All Trees
+     <button onclick="loadAllPlants(false)" 
+      class="w-full text-left font-normal px-4 py-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition">
+       All Trees
     </button>
   `
   container.appendChild(allBtn)
@@ -21,8 +21,8 @@ function displayCategories(categories) {
     const div = document.createElement('div')
     div.innerHTML = `
       <button onclick="loadPlantsByCategory(${category.id})"
-        class="w-full text-left font-normal px-4 py-2 rounded-lg bg-white border border-green-500 text-green-700 hover:bg-[#15803D] hover:text-white transition">
-        🌳 ${category.category_name}
+        class="w-full text-left font-normal px-4 py-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition">
+         ${category.category_name}
       </button>
     `
     container.appendChild(div)
@@ -78,6 +78,7 @@ function displayCards(plants) {
 
     card.innerHTML = `
       <div>
+      <div>
         <img src="${plant.image}" alt="${plant.name}" 
              class="w-full h-40 object-cover rounded-lg"/>
         <h3 onclick="loadPlantDetail(${plant.id})"
@@ -104,6 +105,7 @@ function displayCards(plants) {
           class="btn w-full bg-[#15803D] text-white rounded-full border-none hover:bg-white hover:text-green-700 transition mt-3">
           Add to Cart
         </button>
+      </div>
       </div>
     `
     container.appendChild(card)
