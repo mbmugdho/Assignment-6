@@ -5,7 +5,7 @@ function toggleLoading(show) {
   const spinner = document.getElementById('loading-spinner')
   const cardContainer = document.getElementById('trees-card-container')
 
-  if (!spinner || !cardContainer) return 
+  if (!spinner || !cardContainer) return
 
   if (show) {
     spinner.classList.remove('hidden')
@@ -33,7 +33,7 @@ function setActiveButton(activeId) {
 function loadCategories() {
   fetch('https://openapi.programming-hero.com/api/categories')
     .then((res) => res.json())
-    .then((data) => displayCategories(data.data || data.categories)) 
+    .then((data) => displayCategories(data.data || data.categories))
 }
 
 function displayCategories(categories) {
@@ -69,14 +69,13 @@ function loadAllPlants(limit = true, btnId = null) {
   fetch('https://openapi.programming-hero.com/api/plants')
     .then((res) => res.json())
     .then((data) => {
-      displayCards(limit ? data.plants.slice(0, 6) : data.plants) 
+      displayCards(limit ? data.plants.slice(0, 6) : data.plants)
     })
-    .finally(() => toggleLoading(false)) // 
+    .finally(() => toggleLoading(false)) //
     .then(() => {
       if (btnId) setActiveButton(btnId)
     })
 }
-
 
 function loadPlantsByCategory(categoryId, btnId = null) {
   toggleLoading(true)
@@ -84,14 +83,13 @@ function loadPlantsByCategory(categoryId, btnId = null) {
   fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then((res) => res.json())
     .then((data) => {
-      displayCards(data.plants || []) 
+      displayCards(data.plants || [])
     })
-    .finally(() => toggleLoading(false)) 
+    .finally(() => toggleLoading(false))
     .then(() => {
       if (btnId) setActiveButton(btnId)
     })
 }
-
 
 function displayCards(plants) {
   const container = document.getElementById('trees-card-container')
@@ -132,7 +130,7 @@ function displayCards(plants) {
         <p class="text-sm text-gray-600">
           ${
             plant.description
-              ? plant.description.slice(0, 80)
+              ? plant.description.slice(0, 60)
               : 'No description available'
           }...
         </p>
@@ -157,17 +155,15 @@ function displayCards(plants) {
   })
 }
 
-
 function loadPlantDetail(id) {
   fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
     .then((data) => {
       if (!data || !data.plants) {
-        
         return
       }
 
-      const plant = data.plants 
+      const plant = data.plants
       const modal = document.getElementById('my_modal_4')
       if (!modal) {
         console.error('Modal element not found')
@@ -188,7 +184,7 @@ function loadPlantDetail(id) {
         </div>
       `
 
-      modal.showModal() 
+      modal.showModal()
     })
     .catch((err) => console.error(err))
 }
@@ -250,5 +246,5 @@ if (form) {
   })
 }
 
-  loadCategories()
-  loadAllPlants(true, 'category-all')
+loadCategories()
+loadAllPlants(true, 'category-all')
